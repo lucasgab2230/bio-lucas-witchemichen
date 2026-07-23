@@ -8,5 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: sed -i "s/YEAR_HOLDER/$(date +%Y)/g" README.md
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update copyright year"
