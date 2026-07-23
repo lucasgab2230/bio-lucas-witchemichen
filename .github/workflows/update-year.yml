@@ -1,0 +1,13 @@
+name: Updte Copyright Year
+on:
+  schedule:
+    - cron: '0 0 1 1 *'
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: sed -i "s/YEAR_HOLDER/$(date +%Y)/g" README.md
+        with:
+          commit_message: "chore: update copyright year"
